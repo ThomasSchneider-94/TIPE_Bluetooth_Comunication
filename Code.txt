@@ -1,0 +1,95 @@
+Serial
+	--> Utilisé pour la communication entre Arduino et le PC/autre
+	--> Les arduinos possèdent au moin un port série
+						(autre nom:UART or USART)
+	--> Carte UNO: 0 = Entrée ; 1 = Sortie
+
+
+Serial.begin(vitesse)
+	--> Fixe le débit de communication en nb de caractères/s (=baud)
+		pour la communication série
+	--> Choisir l'un de ces débits: 300   / 1200  / 2400   / 4800
+				    	9600  / 14400 / 19200  / 28800
+				    	38400 / 57600 / 115200
+
+
+
+Serial.available()
+	--> Retourne le nombre de bits de l'information à lire 
+		transmise par le port série
+	--> Il s'agit de données déjà arrivées et stockées 
+		dans le buffer récepteur
+
+
+
+Serial.read()
+	--> Renvoie les données recues par le port série
+
+
+
+Serial.print(nombre/string)
+	--> Affiche les données sur le port série sous forme de texte
+
+
+
+Serial.println(valeur)
+	--> Affiche les données sur le port série sous forme de texte
+		suivi d'un retour à la ligne ("\n)
+
+Serial.write(donnée)
+	--> Transmet des données par le port série
+
+
+
+
+
+
+
+
+pinMode(broche, mode)
+	 --> Configure la broche choisie comme une entrée et/ou sortie
+			 	(INPUT, OUTPUT, ou INPUT_PULLUP)
+
+
+
+digitalWrite(broche, voltage)
+	--> Si la broche est en mode OUTPUT:
+		HIGH = 5V ; LOW = 0V
+	--> Si la broche est en mode INTPUT:
+		Active (HIGH) ou désactive (LOW) le pullup (résistance)
+			interne sur la broche d'entrée. 
+
+
+#include <LibraryFile.h>
+	--> Ajoute de nouvelles bibliothèque dans le croquis
+			(équivalent du import en python)
+
+
+
+
+			Bibliothèque SoftwareSerial
+--> Permet de créer un port virtuel
+
+
+SoftwareSerial Nom(broche_entree, broche_sortie , logique_inversee)
+
+	--> broche_entree = broche qui recoit les données
+	--> broche_sortie = broche qui transmet les données
+	--> logique_inversee optionnel, par défaut sur false
+	= inverse le sens dans lequel les bits en entree sont traités
+		Si activé: LOW (0V sur broche) interprété comme 1 bit
+			   HIGH (5V sur broche) interprété comme 0 bit
+		Affecte aussi la transmission des données
+
+
+
+
+
+
+
+
+
+
+
+
+
